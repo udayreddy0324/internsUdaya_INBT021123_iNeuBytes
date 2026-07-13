@@ -1,0 +1,21 @@
+seed: 20726
+epochs: 25
+batch_size: 128
+validation_size: 5000
+patience: 6
+experiments:
+  - {name: baseline, optimizer: adam, learning_rate: 0.001}
+  - {name: dropout, optimizer: adam, learning_rate: 0.001, dropout: 0.35}
+  - {name: batch_norm, optimizer: adam, learning_rate: 0.001, batch_norm: true}
+  - {name: l2, optimizer: adam, learning_rate: 0.001, l2: 0.0001}
+  - {name: aug_light, optimizer: adam, learning_rate: 0.001, augmentation: light}
+  - {name: aug_moderate, optimizer: adam, learning_rate: 0.001, augmentation: moderate}
+  - {name: aug_aggressive, optimizer: adam, learning_rate: 0.001, augmentation: aggressive}
+  - {name: opt_sgd, optimizer: sgd, learning_rate: 0.001}
+  - {name: opt_rmsprop, optimizer: rmsprop, learning_rate: 0.001}
+  - {name: lr_001, optimizer: adam, learning_rate: 0.01}
+  - {name: lr_0001, optimizer: adam, learning_rate: 0.0001}
+  - {name: deeper, optimizer: adam, learning_rate: 0.001, deeper: true}
+  - {name: kernel_5, optimizer: adam, learning_rate: 0.001, kernel_size: 5}
+  - {name: final, optimizer: adam, learning_rate: 0.001, dropout: 0.35, batch_norm: true, augmentation: moderate, deeper: true}
+
